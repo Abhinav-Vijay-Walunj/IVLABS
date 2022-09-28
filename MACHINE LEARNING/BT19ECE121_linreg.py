@@ -42,7 +42,14 @@ def BT19ECE121_DATASET_DIV_SHUFFLE(file_path,ratio=0.5):
     test_data = data.iloc[int(len(data)*ratio):,:]
     
     return train_data, test_data 
-        
+
+X=np.array(data[data.columns[0:12]])
+y=np.array(data[data.columns[13]])
+
+from scipy.io import loadmat
+file=loadmat(r"C:\Users\Asus\Desktop\IVLABS\MACHINE LEARNING\Matlab_accidents.mat")
+file
+
 def visulization(X, Y, pred = None, scatter = True):
     plt.figure()
     if(scatter):
